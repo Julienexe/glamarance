@@ -19,9 +19,6 @@ def login(request):
     return redirect("shop:product_list")
     
 
-
-
-
 #logout
 @login_required
 def logout_view(request):

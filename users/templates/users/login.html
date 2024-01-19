@@ -1,0 +1,29 @@
+{% extends "shop/base/prod_base.html" %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block inner_page %}
+<section class="module">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-1 mb-sm-40">
+          <h4 class="font-alt">Login</h4>
+          <hr class="divider-w mb-10">
+          <form action="{% url 'users:login' %}" class="form" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <input class="form-control" id="email" type="text" name="email" placeholder="email"/>
+            </div>
+            <div class="form-group">
+              <input class="form-control" id="password" type="password" name="password" placeholder="Password"/>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-round btn-b">Login</button>
+            </div>
+            <div class="form-group"><a href="">Forgot Password?</a></div>
+          </form>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

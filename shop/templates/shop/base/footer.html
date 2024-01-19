@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Glamarance</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.4/css/all.css'><link rel="stylesheet" href="{% static 'css/footer_style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Github: 
+https://github.com/Javieer57/Footer-minimalista-con-galeria -->
+
+<footer class="footer">
+	<div class="owl-carousel">
+
+		<a href="#" class="gallery__photo">
+			<img src="{% static 'img/footer/foot-img.jpg' %}" alt="" />
+			<div class="gallery__fade">
+				<i class="gallery__icon" data-feather="instagram"></i>
+			</div>
+		</a>
+		<a href="#" class="gallery__photo">
+			<img src="{% static 'img/footer/foot-img2.jpg' %}" alt="" />
+			<div class="gallery__fade">
+				<i class="gallery__icon" data-feather="instagram"></i>
+			</div>
+		</a>
+		<a href="#" class="gallery__photo">
+			<img src="{% static 'img/footer/foot-img3.jpg' %}" alt="" />
+			<div class="gallery__fade">
+				<i class="gallery__icon" data-feather="instagram"></i>
+			</div>
+		</a>
+		<a href="#" class="gallery__photo">
+			<img src="{% static 'img/footer/foot-img4.jpg' %}" alt="" />
+			<div class="gallery__fade">
+				<i class="gallery__icon" data-feather="instagram"></i>
+			</div>
+		</a>
+
+	</div>
+	<div class="footer__redes">
+		<ul class="footer__redes-wrapper">
+			<li>
+				<a href="#" class="footer__link">
+					<i class="fab fa-facebook-f"></i>
+					facebook
+				</a>
+			</li>
+			<li>
+				<a href="#" class="footer__link">
+					<i class="fab fa-twitter"></i>
+					twitter
+				</a>
+			</li>
+			<li>
+				<a href="#" class="footer__link">
+					<i class="fab fa-instagram"></i>
+					instagram
+				</a>
+			</li>
+			<li>
+				<a href="#" class="footer__link">
+					<i class="fab fa-youtube"></i>
+					youtube
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="separador"></div>
+
+</footer>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script src='https://unpkg.com/feather-icons'></script><script  src="{% static 'js/footer_script.js' %}"></script>
+
+</body>
+</html>

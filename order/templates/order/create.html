@@ -1,0 +1,69 @@
+{% extends "shop/base/prod_base.html" %}
+{% load crispy_forms_tags %}
+{% load django_bootstrap5 %}
+{% block title %}
+Checkout
+{% endblock %}
+{% block inner_page %}
+<div class="container">
+    <h1 class="text-center">Checkout</h1>
+    <div class="order-info">
+        <h3 class="text-center">Your order</h3>
+        <ul style="display: inline;">
+            {% for item in cart %}
+            <li>
+                {{ item.quantity }}x {{ item.product.name }}
+                <span>SEK {{ item.total_price }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        <h4>Total: SEK {{ cart.get_total_price }}</h4>
+    </div>
+    <section class="module">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5 col-sm-offset-1 mb-sm-40">
+            <h4 class="font-alt">Login</h4>
+            <hr class="divider-w mb-10">
+            <form action="{% url 'users:login' %}" class="form" method="POST">
+                  <div class="form-group">
+                  <input class="form-control" id="email" type="text" name="email" placeholder="email"/>
+                  </div>
+                  <div class="form-group">
+                  <input class="form-control" id="password" type="password" name="password" placeholder="Password"/>
+                  </div>
+                  <div class="form-group">
+                  <button class="btn btn-round btn-b">Login</button>
+                  </div>
+                  {% csrf_token %}
+            </form>
+          </div>
+          <div class="col-sm-5">
+            <h4 class="font-alt">Register</h4>
+            <hr class="divider-w mb-10">
+              <form action="{% url 'order:order_create' %}" method="POST" class="order-form">
+                  {% bootstrap_form form layout='inline' %}
+                  <div>
+                      <label for="password">
+                      Create a Password
+                      </label>
+                      <input type="password" name="password" class="form-control">
+                  </div>
+                  
+                  <br>
+                  <p><input class="btn btn-primary btn-sm btn-block" type="submit" value="Place order"></p>
+                  {% csrf_token %}
+              </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+</div>
+{% endblock %}
+<div>
+    <label for="password">
+        Confirm Password
+    </label>
+    <input type="password" name="password2" class="form-control">
+</div>

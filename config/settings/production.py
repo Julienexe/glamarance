@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '5yo93-8a^%idwkzxz@6gq67p2ml#sraf4=7#pqg+28mv)koo@m'
 
-DEBUG = False
+DEBUG = True
 DATABASE_URL = "postgresql://postgres:665eEcbd66F13baf-c*-cg4fd1d25*CE@viaduct.proxy.rlwy.net:15593/railway"
 
 ALLOWED_HOSTS = [
@@ -141,6 +141,4 @@ CART_SESSION_ID = 'cart'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AUTH_USER_MODEL = 'users.User'
-new_directory = os.path.join(MEDIA_ROOT, 'directory')
-if not os.path.exists(new_directory):
-  os.makedirs(new_directory)
+

@@ -10,6 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5yo93-8a^%idwkzxz@6gq67p2ml#sraf4=7#pqg+28mv)koo@m'
 
 DEBUG = False
+DATABASE_URL = "postgresql://postgres:665eEcbd66F13baf-c*-cg4fd1d25*CE@viaduct.proxy.rlwy.net:15593/railway"
 
 ALLOWED_HOSTS = [
 
@@ -84,13 +85,8 @@ if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 
 # load database from the DATABASE_URL environment variable
-DATABASES = {}
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR , 'db.sqlite3'),
-    }
-}
+    "default":dj_database_url.config(default = DATABASE_URL, conn_max_age=1800),}
 
 
 # Password validation

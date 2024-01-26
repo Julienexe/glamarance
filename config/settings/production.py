@@ -130,7 +130,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 #media root is strictly for production
 MEDIA_ROOT = os.environ["RAILWAY_VOLUME_MOUNT_PATH"]
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 
 
 #Crispy templates for form rendering
@@ -141,3 +141,6 @@ CART_SESSION_ID = 'cart'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AUTH_USER_MODEL = 'users.User'
+new_directory = os.path.join(MEDIA_ROOT, 'directory')
+if not os.path.exists(new_directory):
+  os.makedirs(new_directory)

@@ -129,8 +129,8 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 #media root is strictly for production
+MEDIA_URL = "media/"
 MEDIA_ROOT = os.environ["RAILWAY_VOLUME_MOUNT_PATH"]
-MEDIA_URL = 'media/'
 
 
 #Crispy templates for form rendering

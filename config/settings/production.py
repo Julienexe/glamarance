@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = '5yo93-8a^%idwkzxz@6gq67p2ml#sraf4=7#pqg+28mv)koo@m'
 
-DEBUG = True
+DEBUG = False
 DATABASE_URL = "postgresql://postgres:665eEcbd66F13baf-c*-cg4fd1d25*CE@viaduct.proxy.rlwy.net:15593/railway"
 
 ALLOWED_HOSTS = [
